@@ -1,5 +1,4 @@
 import { motion } from "framer-motion"
-import { useSnapshot } from "valtio"
 import { Link } from "react-router-dom"
 
 import {
@@ -10,8 +9,6 @@ import state from "../store"
 import { Button } from "../components/Button"
 
 const HomePage = () => {
-    const snap = useSnapshot(state);
-
     return (
         <motion.section className="home" {...slideAnimation("left")}>
             <motion.header {...slideAnimation("down")}>

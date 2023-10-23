@@ -1,5 +1,6 @@
 export const downloadCanvasToImage = () => {
   const canvas = document.querySelector("canvas");
+  if (!canvas) return;
   const dataURL = canvas.toDataURL();
   const link = document.createElement("a");
 
@@ -10,14 +11,15 @@ export const downloadCanvasToImage = () => {
   document.body.removeChild(link);
 };
 
-export const reader = (file) =>
+export const reader = (file: any) =>
+  //@ts-ignore
   new Promise((resolve, reject) => {
     const fileReader = new FileReader();
     fileReader.onload = () => resolve(fileReader.result);
     fileReader.readAsDataURL(file);
   });
 
-export const getContrastingColor = (color) => {
+export const getContrastingColor = (color: string) => {
   // Remove the '#' character if it exists
   const hex = color.replace("#", "");
 

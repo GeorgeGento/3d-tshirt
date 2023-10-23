@@ -1,6 +1,4 @@
-import React, { useState, useEffect } from 'react'
 import { motion } from "framer-motion"
-import { useSnapshot } from "valtio"
 
 import state from "@/store/index"
 import { fadeAnimation, slideAnimation } from '@/utils/motion'
